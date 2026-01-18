@@ -1,0 +1,27 @@
+info:
+  name: sendEmail
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/mail/send
+  body:
+    type: json
+    data: |
+      {
+        "to": "hoheckell@yahoo.com.br",
+        "subject": "Bem-vindo",
+        "template": "confirm-email",
+        "context": {
+          "name": "João",
+          "code": "AAAAAA"
+        }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
