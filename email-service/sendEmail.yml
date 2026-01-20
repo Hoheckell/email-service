@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: http://localhost:3000/mail/send
+  url: https://email-api-pi-ten.vercel.app/mail/send
   body:
     type: json
     data: |
