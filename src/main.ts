@@ -5,7 +5,6 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as classValidator from 'class-validator';
 import * as classTransformer from 'class-transformer';
-import * as oracledb from 'oracledb';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
