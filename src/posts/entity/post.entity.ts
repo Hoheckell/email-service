@@ -45,10 +45,10 @@ export class PostEntity {
   })
   status: PostStatus;
 
-  @CreateDateColumn({ type: 'timestamp without time zone', name: 'created_at' })
+  @Column({ type: 'timestamp without time zone', name: 'created_at' })
   created_at: Date;
 
-  @UpdateDateColumn({ type: 'timestamp without time zone', name: 'updated_at', nullable: true })
+  @Column({ type: 'timestamp without time zone', name: 'updated_at', nullable: true })
   updated_at?: Date | null;
 
   @Index('idx_posts_published')

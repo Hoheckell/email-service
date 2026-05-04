@@ -42,5 +42,13 @@ export class CreatePostDto {
 
   @IsDateString({}, { message: 'A data de publicação deve estar em um formato válido (ISO 8601)' })
   @IsOptional()
-  publishedAt?: string;
+  published_at?: string;
+
+  @IsDateString()
+  @IsOptional()
+  create_at?: string | null;
+
+  @IsDateString()
+  @IsOptional()
+  update_at?: string | null;
 }
