@@ -8,10 +8,9 @@ export class PostsService {
 
     async create(post: PostDto): Promise<PostDto> {
         const supabase = getSupabaseClient();
-        const entity = post.toEntity(); 
         const { data, error } = await supabase
             .from('posts')
-            .insert(entity)
+            .insert(post)
             .select()
             .single();
         if (error) throw error;
