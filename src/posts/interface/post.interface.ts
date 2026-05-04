@@ -8,7 +8,7 @@ export interface IPost {
   excerpt?: string | null;
   coverImage?: string | null;
   status: PostStatus;
-  createdAt: Date;
-  updatedAt?: Date | null;
-  publishedAt?: Date | null;
+  created_at: Date;
+  updated_at?: Date | null;
+  published_at?: Date | null;
 }

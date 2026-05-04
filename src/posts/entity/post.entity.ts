@@ -46,14 +46,14 @@ export class PostEntity {
   status: PostStatus;
 
   @CreateDateColumn({ type: 'timestamp without time zone', name: 'created_at' })
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn({ type: 'timestamp without time zone', name: 'updated_at', nullable: true })
-  updatedAt?: Date | null;
+  updated_at?: Date | null;
 
   @Index('idx_posts_published')
   @Column({ type: 'timestamp without time zone', name: 'published_at', nullable: true })
-  publishedAt?: Date | null;
+  published_at?: Date | null;
 
     toDto(): PostDto {
         const dto = new PostDto();
@@ -64,9 +64,9 @@ export class PostEntity {
         dto.excerpt = this.excerpt;
         dto.coverImage = this.coverImage;
         dto.status = this.status;
-        dto.created_at = this.createdAt;
-        dto.updated_at = this.updatedAt;
-        dto.published_at = this.publishedAt;
+        dto.created_at = this.created_at;
+        dto.updated_at = this.updated_at;
+        dto.published_at = this.published_at;
         return dto;
     }
 

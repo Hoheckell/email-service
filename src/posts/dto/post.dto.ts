@@ -58,9 +58,9 @@ export class PostDto {
         entity.excerpt = this.excerpt ?? '';
         entity.coverImage = this.coverImage ?? '';
         entity.status = this.status;
-        entity.createdAt = this.created_at ?? new Date();
-        entity.updatedAt = this.updated_at ?? null;
-        entity.publishedAt = this.published_at ?? null;
+        entity.created_at = this.created_at ?? new Date();
+        entity.updated_at = this.updated_at ?? null;
+        entity.published_at = this.published_at ?? null;
         return entity;
     }
 
@@ -73,9 +73,9 @@ export class PostDto {
         dto.excerpt = entity.excerpt;
         dto.coverImage = entity.coverImage;
         dto.status = entity.status;
-        dto.created_at = entity.createdAt;
-        dto.updated_at = entity.updatedAt;
-        dto.published_at = entity.publishedAt;
+        dto.created_at = entity.created_at;
+        dto.updated_at = entity.updated_at;
+        dto.published_at = entity.published_at;
         return dto;
     }
 
@@ -88,9 +88,9 @@ export class PostDto {
         dto.excerpt = json.excerpt ?? '';
         dto.coverImage = json.coverImage ?? '';
         dto.status = json.status ?? '';
-        dto.created_at = json.createdAt ?? null;
-        dto.updated_at = json.updatedAt ?? null;
-        dto.published_at = json.publishedAt ?? null;
+        dto.created_at = json.created_at ?? null;
+        dto.updated_at = json.updated_at ?? null;
+        dto.published_at = json.published_at ?? null;
         return dto;
     }
 }
