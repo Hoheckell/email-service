@@ -81,7 +81,7 @@ export class PostDto {
 
     static fromJson(json: IPost): PostDto {
         const dto = new PostDto();
-        dto.id = json.id ?? 0;
+        dto.id = json.id;
         dto.title = json.title;
         dto.slug = json.slug;
         dto.content = json.content;

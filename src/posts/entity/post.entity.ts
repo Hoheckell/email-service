@@ -57,7 +57,7 @@ export class PostEntity {
 
     toDto(): PostDto {
         const dto = new PostDto();
-        dto.id = this.id ?? undefined;
+        dto.id = this.id ?? '';
         dto.title = this.title;
         dto.slug = this.slug;
         dto.content = this.content;

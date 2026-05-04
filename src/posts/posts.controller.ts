@@ -29,6 +29,7 @@ export class PostsController {
         return this.postsService.findAll();
     }
 
+    @Public()
     @Get(':id')
     findOne(@Param('id') id: string, @Headers('x-token') token: string): Promise<PostDto> {
         if (token != process.env.X_TOKEN) {
