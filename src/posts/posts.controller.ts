@@ -62,4 +62,13 @@ export class PostsController {
         }
         return this.postsService.uploadFile(file);
     }
+
+    @Public()
+    @Get('slug/:slug')
+    getPostBySlug(@Param('slug') slug: string, @Headers('x-token') token: string): Promise<PostDto> {
+        if (token != process.env.X_TOKEN) {
+            throw new UnauthorizedException('Token inválido');
+        }
+        return this.postsService.getPostBySlug(slug);
+    }
 }

@@ -81,4 +81,15 @@ export class PostsService {
         url: publicUrl.publicUrl
         };
   }
+
+  async getPostBySlug(slug: string): Promise<PostDto> {
+    const supabase = getSupabaseClient();
+    const { data, error } = await supabase
+      .from('posts')
+      .select('*')
+      .eq('slug', slug)
+      .single();
+    if (error) throw error;
+    return PostDto.fromJson(data);
+  }
 }
