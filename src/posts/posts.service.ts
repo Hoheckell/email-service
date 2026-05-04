@@ -39,10 +39,9 @@ export class PostsService {
 
     async update(id: string, post: PostDto): Promise<PostDto> {
         const supabase = getSupabaseClient();
-        const entity = post.toEntity();
         const { data, error } = await supabase
             .from('posts')
-            .update(entity)
+            .update({ ...post, id: undefined, created_at: undefined })
             .eq('id', id)
             .select()
             .single();
