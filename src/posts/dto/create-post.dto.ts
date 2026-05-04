@@ -8,8 +8,13 @@ import {
   Matches 
 } from 'class-validator';
 import { PostStatus } from '../../enums/post-status.enum';
+import { IsUUID } from 'class-validator';
 
 export class CreatePostDto {
+  @IsUUID()
+  @IsOptional()
+  id?: string;
+
   @IsString({ message: 'O título deve ser uma string' })
   @IsNotEmpty({ message: 'O título é obrigatório' })
   @MaxLength(255, { message: 'O título não pode ter mais de 255 caracteres' })
