@@ -58,8 +58,8 @@ export class PostDto {
         entity.excerpt = this.excerpt ?? '';
         entity.coverImage = this.coverImage ?? '';
         entity.status = this.status;
-        entity.created_at = this.created_at ?? new Date();
-        entity.updated_at = this.updated_at ?? null;
+        entity.createdAt = this.created_at ?? new Date();
+        entity.updatedAt = this.updated_at ?? null;
         entity.published_at = this.published_at ?? null;
         return entity;
     }
@@ -73,8 +73,8 @@ export class PostDto {
         dto.excerpt = entity.excerpt;
         dto.coverImage = entity.coverImage;
         dto.status = entity.status;
-        dto.created_at = entity.created_at;
-        dto.updated_at = entity.updated_at;
+        dto.created_at = entity.createdAt;
+        dto.updated_at = entity.updatedAt;
         dto.published_at = entity.published_at;
         return dto;
     }
