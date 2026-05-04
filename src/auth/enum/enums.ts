@@ -1,0 +1,16 @@
+export enum UserRoleEnum {
+  ALUNO = 'ALUNO',
+  PROFESSOR = 'PROFESSOR',
+}
+
+export enum StatusEnum {
+  RASCUNHO = 'RASCUNHO',
+  PUBLICADO = 'PUBLICADO'
+}
+
+export enum TipoQuestaoEnum {
+  SINGLE_CHOICE = 'SINGLE_CHOICE',
+  MULTIPLE_CHOICE = 'MULTIPLE_CHOICE',
+  CODE_SUBMISSION = 'CODE_SUBMISSION',
+  DRAG_AND_DROP = 'DRAG_AND_DROP'
+}

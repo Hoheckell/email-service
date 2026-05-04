@@ -1,0 +1,27 @@
+info:
+  name: signup
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:3000/auth/signup
+  body:
+    type: json
+    data: |-
+      {
+        "email":"nunes.carvalho@workmail.com",
+        "nome":"Professor",
+        "codigo":"ASDF12",
+        "ativo":true,
+        "whatsapp":"85997653319",
+        "senha":"123456",
+        "role":"PROFESSOR"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

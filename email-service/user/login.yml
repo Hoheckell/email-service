@@ -1,0 +1,23 @@
+info:
+  name: login
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://localhost:3000/auth/login
+  body:
+    type: json
+    data: |-
+      {
+        "email":"nunes.carvalho@workmail.com",
+        "password":"123456",
+        "role":"PROFESSOR"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
