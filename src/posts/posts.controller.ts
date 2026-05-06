@@ -4,6 +4,7 @@ import { PostsService } from './posts.service';
 import { PostDto } from './dto/post.dto';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Public } from '../auth/decorators/public.decorator';
+import { IImage } from '../images/interfaces/images.interface';
 
 @UseGuards(JwtAuthGuard)
 @Controller('posts')
@@ -56,7 +57,7 @@ export class PostsController {
 
     @Post('upload')
     @UseInterceptors(FileInterceptor('file'))
-    async uploadFile(@UploadedFile() file: Express.Multer.File, @Headers('x-token') token: string) {
+    async uploadFile(@UploadedFile() file: Express.Multer.File, @Headers('x-token') token: string): Promise<IImage> {
         if (token != process.env.X_TOKEN) {
             throw new UnauthorizedException('Token inválido');
         }

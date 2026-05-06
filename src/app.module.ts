@@ -17,6 +17,7 @@ import { LeaderboardModule } from './leaderboard/leaderboard.module';
 import { PostsModule } from './posts/posts.module';
 import { QuizzModule } from './quizz/quizz.module';
 import { AvisosModule } from './avisos/avisos.module';
+import { ImagesModule } from './images/images.module';
 
 @Module({
   imports: [
@@ -34,9 +35,10 @@ import { AvisosModule } from './avisos/avisos.module';
     MateriaisModule,
     NotificationsModule,
     LeaderboardModule,
-    PostsModule,
+    PostsModule,  
     QuizzModule,
     AvisosModule,
+    ImagesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -6,10 +6,15 @@ import { AppModule } from './app.module';
 import * as classValidator from 'class-validator';
 import * as classTransformer from 'class-transformer';
 
+const allowedOrigins = [
+  'http://localhost:4200',
+  'https://gygaweb.com.br',
+];
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: '*',
+    origin: allowedOrigins,
   });
   app.useGlobalPipes(
     new ValidationPipe({
